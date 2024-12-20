@@ -1,5 +1,6 @@
 import React from 'react'
 import AddEntryPage from '../pages/AddEntryPage'
+import UserListPage from '../pages/UserListPage';
 
 class AddEntry extends React.Component{
     constructor(props){
@@ -52,6 +53,8 @@ class AddEntry extends React.Component{
 
     render() {
         const { error, isLoaded, table, medias } = this.state;
+        if(error)
+            return UserListPage();
         return AddEntryPage(table, medias);
     }
 };

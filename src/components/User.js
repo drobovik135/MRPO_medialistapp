@@ -1,5 +1,6 @@
 import React from "react";
 import UserPage from "../pages/UserPage";
+import UserListPage from "../pages/UserListPage";
 
 class User extends React.Component{
     constructor(props){
@@ -51,6 +52,8 @@ class User extends React.Component{
 
     render() {
         const { error, isLoaded, user, lists } = this.state;
+        if(error)
+            return UserListPage();
         return UserPage(user, lists);
     }
 };

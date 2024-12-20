@@ -7,6 +7,18 @@ export const MyListTablePage = (table, entries) => {
 
     return (
         <div className='mylisttable'>
+            <hr></hr>
+            <hr></hr>
+            <hr></hr>
+            <hr></hr>
+            <hr></hr>
+            <hr></hr>
+            <hr></hr>
+            <hr></hr>
+            <hr></hr>
+            <Link to={`/add_entry?table_id=${table.id}`}>
+                Add Entry
+            </Link>
             {entries?.length > 0 &&
                 entries.map(entryMedia => (
                     <div className='mylisttable'>

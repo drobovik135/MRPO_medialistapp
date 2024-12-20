@@ -24,3 +24,10 @@ export async function removeEntry(entryId) {
     return await axios.delete(`http://localhost:8080/entries/${entryId}`);
     
 }
+
+export async function createTable(userId, tableName, tableInfo) {
+    return await axios.post(`http://localhost:8080/users/${userId}/table`, {
+        "name":tableName,
+        "info": tableInfo
+    })
+}

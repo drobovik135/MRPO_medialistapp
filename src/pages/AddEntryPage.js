@@ -15,13 +15,12 @@ const AddEntryPage = (table, medias) => {
             var rate = -1;
             var review = "";
             return <div>
-                    <Link to={`/table?table_id=${table.id}`} onClick={() => {addEntryMediaToList(table.id, entryMedia.id, rate, review)}}>
-                      <EntryMediaPage entryMedia={entryMedia}/> 
-                    </Link>
+                    <EntryMediaPage entryMedia={entryMedia}/> 
                     <input  type="text"
                       onChange={ e => { rate = e.target.value }}/>
                     <input  type="text"
                       onChange={ e => { review = e.target.value }}/>
+                    <Link to={`/table?table_id=${table.id}`} onClick={() => {addEntryMediaToList(table.id, entryMedia.id, rate, review)}}>Rate</Link>
                   </div>
           }
             

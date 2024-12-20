@@ -31,6 +31,8 @@ class UserList extends React.Component{
 
     render() {
         const { error, isLoaded, users } = this.state;
+        if(error)
+            return UserListPage();
         return UserListPage(users);
     }
 };

@@ -1,5 +1,6 @@
 import React from 'react'
 import MyListTablePage from '../pages/MyListTablePage'
+import UserListPage from '../pages/UserListPage';
 
 class MyListTable extends React.Component{
     constructor(props){
@@ -52,6 +53,8 @@ class MyListTable extends React.Component{
 
     render() {
         const { error, isLoaded, table, entries } = this.state;
+        if(error)
+            return UserListPage();
         return MyListTablePage(table, entries);
     }
 };
