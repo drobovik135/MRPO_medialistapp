@@ -13,6 +13,7 @@ import Header from './components/Header';
 
 import User from './components/User'
 import UserList from './components/UserList'
+import MyListTable from './pages/MyListTablePage';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <div className="App">
         <Router>
           <Routes>
-            <Route path="/list"></Route>
+            <Route path="/test" element ={<MyListTable/>}></Route>
             <Route path="/" element={<UserList/>}></Route>
             <Route path="/user" element={<User/>}></Route>
           </Routes>

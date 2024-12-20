@@ -146,3 +146,51 @@ Users
 .header-link:hover {
   text-decoration: underline;
 }
+
+
+.unique-lists-table-container {
+  background-color: #f0f0f0; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh; 
+  overflow-y: auto; 
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+.mylisttable {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-entry-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.add-entry-button button {
+  padding: 10px 20px;
+  background-color: #d3a349;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-entry-button button:hover {
+  background-color: #45a049;
+}
