@@ -115,8 +115,9 @@ Users
   background-color: #333;
   color: #fff;
   padding: 35px 60px;
+  padding-bottom: 60px;
   position: fixed;
-  top: 0;
+  top: 100;
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -174,10 +175,11 @@ h2 {
 .mylisttable {
   background-color: #fff;
   border-radius: 8px;
-  padding: 20px;
+  justify-content: left;
+  padding: 30px;
+  padding-top: 200px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   align-content: left;
-  
 }
 
 .add-entry-button {
@@ -266,10 +268,11 @@ h2 {
 }
 
 .user-lists{
-  display: flexbox;
+  display: grid;
   gap: 20px;
   overflow-x: auto;
-  padding: 20px;
+  align-items: 20px;
+  padding: 100px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -284,7 +287,5 @@ h2 {
   display: grid;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  height: 90vh;
   background-color: #f4f4f4;
 }

@@ -23,12 +23,18 @@ export async function addEntryMediaToList(tableId, entryId, entryRate, entryRevi
 
 export async function removeEntry(entryId) {
     return await axios.delete(`http://localhost:8080/entries/${entryId}`);
-    
 }
 
 export async function createTable(userId, tableName, tableInfo) {
     return await axios.post(`http://localhost:8080/users/${userId}/table`, {
         "name":tableName,
         "info": tableInfo
+    })
+}
+
+export async function createUser(userInfo, userName) {
+    return await axios.post(`http://localhost:8080/users`, {
+        "name": userInfo,
+        "info": userName
     })
 }
