@@ -9,7 +9,7 @@ const UserPage = (user, lists) => {
     var info = "";
     return (
         <div>
-            <div className="user-list-container">
+            <div className="user-list-container2">
                 <div className="user-list">
                     <h1>{user.name}</h1>
                     <h1>{user.info}</h1>
@@ -30,12 +30,12 @@ const UserPage = (user, lists) => {
                             </div>
 
                             <Link to={`/user?user_id=${user.id}`} onClick={() => { createTable(user.id, name, info) }}>
-                                create
+                                <h3>Create</h3>
                             </Link>
                         </div>
                     }
                 </div>
-                <div className="user-list">
+                <div className="user-lists">
                     {lists.map((list) => (
                         <Link
                             to={`/table?table_id=` + list.id}
@@ -44,7 +44,7 @@ const UserPage = (user, lists) => {
                             <div className="user-card">
                                 <h3 className="user-name">{list.name}</h3>
                                 <p className="user-description">{list.info}</p>
-                                <button onClick={() => { removeEntry(entryMedia.id) }}> 
+                                <button onClick={() => { removeEntry(entryMedia.id) }}>
                                     Delete List</button >
                             </div>
                         </Link>))}
