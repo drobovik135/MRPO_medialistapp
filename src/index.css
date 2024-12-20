@@ -68,6 +68,7 @@ Users
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px;
   height: 100vh;
   background-color: #f4f4f4;
 }
@@ -193,4 +194,8 @@ h2 {
 
 .add-entry-button button:hover {
   background-color: #45a049;
+}
+
+.myuser-class{
+  display: grid;
 }
