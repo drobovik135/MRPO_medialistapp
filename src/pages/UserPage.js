@@ -8,7 +8,7 @@ const UserPage = (user, lists) => {
     var name = "";
     var info = "";
     return (
-        <div className="myuser-classr">
+        <div>
             <div className="user-list-container">
                 <div className="user-list">
                     <h1>{user.name}</h1>
@@ -17,15 +17,15 @@ const UserPage = (user, lists) => {
                 <div>
                     {
                         <div>
-                            Create
+                            <h2>Add new List</h2>
                             <div>
                                 Name
-                                <input type="text"
+                                <input type="text" className='text-field__input'
                                     onChange={e => { name = e.target.value }} />
                             </div>
                             <div>
                                 info
-                                <input type="text"
+                                <input type="text" className='text-field__input'
                                     onChange={e => { info = e.target.value }} />
                             </div>
 
@@ -44,6 +44,8 @@ const UserPage = (user, lists) => {
                             <div className="user-card">
                                 <h3 className="user-name">{list.name}</h3>
                                 <p className="user-description">{list.info}</p>
+                                <button onClick={() => { removeEntry(entryMedia.id) }}> 
+                                    Delete List</button >
                             </div>
                         </Link>))}
                 </div>
