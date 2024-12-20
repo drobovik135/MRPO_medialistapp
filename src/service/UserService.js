@@ -23,3 +23,7 @@ export async function createNewUser(name, info) {
         console.log(error);
       });   
 }
+
+export async function getUser(userId) {
+  return await axios.get(`${API_URL}/${userId}`)
+}

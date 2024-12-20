@@ -34,7 +34,7 @@ const UserList = ({ users }) => {
                 {users.map((user, index) => (
                     <Link
                         key={index}
-                        to={`/user/${user.id}`}
+                        to={`/user?id=`+user.id}
                         className="user-card-link"
                     >
                         <div key={index} className="user-card">
