@@ -5,7 +5,7 @@ import {
 
 const UserPage = (user, lists) => {
     return (
-        <div className = "user-list-container">
+        <div className = "myuser-classr">
             <div className="user-list-container">
                 <div className="user-list">
                     <h1>{user.name}</h1>
