@@ -212,12 +212,12 @@ h2 {
 .button-59{
   align-items: center;
   background-color: #fff;
-  border: 2px solid #000;
+  border: 2px solid #6b6b6b;
   box-sizing: border-box;
-  color: #000;
+  color: #6b6b6b;
   cursor: pointer;
   display: inline-flex;
-  fill: #000;
+  fill: #6b6b6b;
   font-family: Inter,sans-serif;
   font-size: 16px;
   font-weight: 600;
