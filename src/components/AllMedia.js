@@ -8,18 +8,18 @@ export const AllMedia = () => {
             this.state = {
                 error: null,
                 isLoaded: false,
-                users: []
+                medias: []
             }
         }
     
         componentDidMount(){
-            fetch('http://localhost:8080/entries')
+            fetch('http://localhost:8080/medias')
               .then(res => res.json())
               .then(
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        users: result
+                        medias: result
                     });
                 },
                 (error) => {
@@ -31,8 +31,8 @@ export const AllMedia = () => {
         }
     
         render() {
-            const { error, isLoaded, users } = this.state;
-            return UserListPage(users);
+            const { error, isLoaded, medias } = this.state;
+            return UserListPage(medias);
         }
     };
     
