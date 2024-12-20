@@ -22,9 +22,9 @@ import AddTable from './components/AddTable';
 function App() {
   return (
     <>
-      <Header />
       <div className="App">
         <Router>
+        <Header />
           <Routes>
             <Route path="/" element={<UserList/>}></Route>
             <Route path="/user" element={<User/>}></Route>
