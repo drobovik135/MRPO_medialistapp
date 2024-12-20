@@ -1,6 +1,6 @@
 const EntryMediaPage = (user, list) => {
     return (
-        <Link to={`/entries/${entryMedia.id}`}>
+        <div>
             <div class="media-entry">
                 <div class="media-poster">
                     <img src={entryMedia.imgUrl} />
@@ -11,7 +11,7 @@ const EntryMediaPage = (user, list) => {
                     <p class="media-genre">Genre: {entryMedia.genre}</p>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
 
