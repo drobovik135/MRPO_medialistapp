@@ -1,5 +1,5 @@
 import React from 'react'
-//import MyListTablePage from '../pages/MyListTablePage'
+import AddEntryPage from '../pages/AddEntryPage'
 
 class AddTable extends React.Component{
     constructor(props){
@@ -34,7 +34,7 @@ class AddTable extends React.Component{
 
     render() {
         const { error, isLoaded, user } = this.state;
-        return AddMediaPage(user);
+        return AddEntryPage(user);
     }
 };
 

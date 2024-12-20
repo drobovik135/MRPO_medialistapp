@@ -1,5 +1,5 @@
 import React from 'react'
-//import MyListTablePage from '../pages/MyListTablePage'
+import AddEntryPage from '../pages/AddEntryPage'
 
 class AddEntry extends React.Component{
     constructor(props){
@@ -31,7 +31,7 @@ class AddEntry extends React.Component{
 
     render() {
         const { error, isLoaded, categories } = this.state;
-        return AddMediaPage(categories);
+        return AddEntryPage(categories);
     }
 };
 

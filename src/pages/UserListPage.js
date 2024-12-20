@@ -9,7 +9,7 @@ const UserListPage = (users) => {
             <div className="user-list">
                 {users.map((user) => (
                     <Link
-                        to={`/user?id=`+user.id}
+                        to={`/user?user_id=`+user.id}
                         className="user-card-link"
                     >
                         <div className="user-card">

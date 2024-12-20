@@ -32,26 +32,12 @@ class User extends React.Component{
                 });
             });
 
-        fetch('http://localhost:8080/users' + userId + "/table")
-            .then(res => res.json())
-            .then(
-              (result) => {
-                  this.setState({
-                      isLoaded: true,
-                      lists: result
-                  });
-              },
-              (error) => {
-                  this.setState({
-                      isLoaded: true,
-                      error
-                  });
-              });
+        
     }
 
     render() {
         const { error, isLoaded, user, lists } = this.state;
-        return UserPage(userId, lists);
+        return UserPage(user, lists);
     }
 };
 

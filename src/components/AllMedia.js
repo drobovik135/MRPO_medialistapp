@@ -1,4 +1,5 @@
 import React from 'react'
+import AddEntryPage from '../pages/AddEntryPage'
 
 export const AllMedia = () => {
 
@@ -53,10 +54,10 @@ export const AllMedia = () => {
     
         render() {
             const { error, isLoaded, category, medias } = this.state;
-            return UserListPage(category, medias);
+            return AddEntryPage(category, medias);
         }
     };
     
 }
 
-export default UserList
+export default AllMedia

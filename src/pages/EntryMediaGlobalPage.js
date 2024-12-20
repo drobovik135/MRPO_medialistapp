@@ -1,4 +1,6 @@
-const EntryMediaPage = (user, list) => {
+
+
+const EntryMediaPage = (entryMedia) => {
     return (
         <div>
             <div class="media-entry">
