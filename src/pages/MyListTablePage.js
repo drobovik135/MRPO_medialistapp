@@ -19,19 +19,18 @@ export const MyListTablePage = (table, entries) => {
             <Link to={`/add_entry?table_id=${table.id}`}>
                 Add Entry
             </Link>
-            {entries?.length > 0 &&
-                entries.map(entryMedia => (
-                    <div className='mylisttable'>
-                        <Link to={`/table?table_id=${table.id}`}>
-                            <EntryMedia entryMedia={entryMedia} />
+            {entries.map(entryMedia => (
+                <div className='mylisttable'>
+                    <Link to={`/table?table_id=${table.id}`}>
+                        <EntryMedia entryMedia={entryMedia} />
+                    </Link>
+                    <div>
+                        <Link align="left" className='button-23' to={`/table?table_id=${table.id}`} onClick={() => { removeEntry(entryMedia.id) }}>
+                            Delete Entry
                         </Link>
-                        <div>
-                            <Link align="left" className='button-23' to={`/table?table_id=${table.id}`} onClick={() => { removeEntry(entryMedia.id) }}>
-                                Delete Entry
-                            </Link>
-                        </div>
                     </div>
-                ))}
+                </div>
+            ))}
         </div>
     )
 }
