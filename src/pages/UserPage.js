@@ -6,6 +6,17 @@ import { createTable } from '../service/EntryMediaService';
 import { deleteTableById } from '../service/UserService';
 
 const UserPage = (user, lists) => {
+
+    function updateState(userId, name, info){
+        createTable(userId, name, info)
+        window.location.reload();
+    }
+
+    function deleteUpdateState(listId){
+        deleteTableById(listId);
+        window.location.reload();
+    }
+
     var name = "";
     var info = "";
     return (
@@ -31,7 +42,7 @@ const UserPage = (user, lists) => {
                                         onChange={e => { info = e.target.value }} />
                                 </div>
 
-                                <Link to={`/user?user_id=${user.id}`} onClick={() => { createTable(user.id, name, info) }}>
+                                <Link to={`/user?user_id=${user.id}`} onClick={() => { updateState(user.id, name, info) }}>
                                     <h3>Create</h3>
                                 </Link>
                             </div>
@@ -45,7 +56,7 @@ const UserPage = (user, lists) => {
                                 <h3 className="user-name">{list.name}</h3>
                             </Link>
                             <p className="user-description">{list.info}</p>
-                            <button className="button-23" onClick={() => { deleteTableById(list.id) }}>
+                            <button className="button-23" onClick={() => { deleteUpdateState(list.id) }}>
                                 Delete List</button >
                         </div>
                     ))}

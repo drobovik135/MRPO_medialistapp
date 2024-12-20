@@ -3,17 +3,13 @@ import EntryMedia from '../components/EntryMedia';
 import { Link } from 'react-router-dom';
 import { removeEntry } from '../service/EntryMediaService';
 import { Container } from 'react-bootstrap';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export const MyListTablePage = (table, entries) => {
 
-
-    const [entries, setEntries] = useState([]);
-
-    function updateState(entryMedia) {
-      const item = entryMedia
-      console.log(entryMedia);
-      setEntries([...entries, entryMedia]);
+    function updateState(entryMediaId) {
+      removeEntry(entryMediaId)
+      window.location.reload();
     }
 
     return (

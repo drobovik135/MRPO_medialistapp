@@ -12,7 +12,7 @@ export async function getAllTablesFromUser(userId){
 }
 
 export async function deleteTableById(tableId){
-  return await axios.delete(`http://localhost:8080/${tableId}`)
+  return await axios.delete(`http://localhost:8080/tables/${tableId}`)
 }
 
 export async function createNewUser(name, info) {

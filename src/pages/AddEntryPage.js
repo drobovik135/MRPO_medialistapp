@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom'
 import EntryMediaPage from './EntryMediaGlobalPage'
 
 const AddEntryPage = (table, medias) => {
+  function updateState(tableId, entryMediaId, rating, review){
+    addEntryMediaToList(tableId, entryMediaId, rating, review)
+  }
+  
   return (
     <main className='mylisttable'>
       <h1>{table.name}</h1>
@@ -38,7 +42,7 @@ const AddEntryPage = (table, medias) => {
             </div>
             <input type="text"
               onChange={e => { review = e.target.value }} />
-            <Link to={`/table?table_id=${table.id}`} onClick={() => { addEntryMediaToList(table.id, entryMedia.id, rating, review) }}>Rate</Link>
+            <Link to={`/table?table_id=${table.id}`} onClick={() => { updateState(table.id, entryMedia.id, rating, review) }}>Rate</Link>
           </div>
         }
 

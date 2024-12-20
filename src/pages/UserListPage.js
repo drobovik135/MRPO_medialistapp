@@ -5,6 +5,11 @@ import {
 import { createUser } from '../service/EntryMediaService';
 
 const UserListPage = (users) => {
+    function updateState(name, info){
+        createUser(name, info);
+        window.location.reload();
+    }
+
     var userName = "";
     var userInfo = "";
     return (
@@ -21,7 +26,7 @@ const UserListPage = (users) => {
                         <input type="text" className='text-field__input'
                             onChange={e => { userInfo = e.target.value }} />
                     </div>
-                    <Link to={`/`} onClick={() => { createUser(userName, userInfo) }}>
+                    <Link to={`/`} onClick={() => { updateState(userName, userInfo) }}>
                         <h3>Create</h3>
                     </Link>
                 </div>
