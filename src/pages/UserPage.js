@@ -3,6 +3,7 @@ import {
     Link,
 } from 'react-router-dom';
 import { createTable } from '../service/EntryMediaService';
+import { deleteTableById } from '../service/UserService';
 
 const UserPage = (user, lists) => {
     var name = "";
@@ -24,7 +25,7 @@ const UserPage = (user, lists) => {
                                     onChange={e => { name = e.target.value }} />
                             </div>
                             <div>
-                                info
+                                Info
                                 <input type="text" className='text-field__input'
                                     onChange={e => { info = e.target.value }} />
                             </div>
@@ -44,7 +45,7 @@ const UserPage = (user, lists) => {
                             <div className="user-card">
                                 <h3 className="user-name">{list.name}</h3>
                                 <p className="user-description">{list.info}</p>
-                                <button onClick={() => { removeEntry(entryMedia.id) }}>
+                                <button onClick={() => { deleteTableById(list.id) }}>
                                     Delete List</button >
                             </div>
                         </Link>))}

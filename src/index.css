@@ -266,7 +266,7 @@ h2 {
 }
 
 .user-lists{
-  display: grid;
+  display: flexbox;
   gap: 20px;
   overflow-x: auto;
   padding: 20px;

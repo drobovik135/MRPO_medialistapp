@@ -11,6 +11,10 @@ export async function getAllTablesFromUser(userId){
   return await axios.get(`${API_URL}/${userId}/table`)
 }
 
+export async function deleteTableById(tableId){
+  return await axios.delete(`http://localhost:8080/${tableId}`)
+}
+
 export async function createNewUser(name, info) {
     return await axios.post(`${API_URL}`, {
         name: name,
