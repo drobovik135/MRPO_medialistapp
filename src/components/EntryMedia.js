@@ -11,7 +11,7 @@ const EntryMedia = ({ entryMedia }) => {
         <div class="media-info">
           <h2 class="media-title">{entryMedia.name}</h2>
           <p class="mediaEntry-rating">Your Rating: {entryMedia.mediaRate}</p>
-          <p class="media-genre">Genre: {entryMedia.genre}</p>
+          <p class="media-genre">Review: {entryMedia.mediaReview}</p>
         </div>
       </div>
     </Link>
