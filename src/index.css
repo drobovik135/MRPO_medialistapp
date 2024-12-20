@@ -289,3 +289,10 @@ h2 {
   align-items: center;
   background-color: #f4f4f4;
 }
+
+.link-Header { color:rgb(218, 195, 195) }
+
+Link:visited { text-decoration: none; color:red; }
+Link:hover { text-decoration: none; color:blue; }
+Link:focus { text-decoration: none; color:yellow; }
+Link:hover, Link:active { text-decoration: none; color:black }
