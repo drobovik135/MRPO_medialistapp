@@ -1,11 +1,12 @@
 import React from 'react'
+import { addEntryMediaToList } from '../service/EntryMediaService'
 
-const AddEntryPage = (tableId, entryId) => {
+const AddEntryPage = (tableId, medias) => {
   return (
     <main className='mylisttable'>
-            {data?.content?.length === 0 && <div>No entries yet</div>}
+            {medias?.content?.length === 0 && <div>No entries yet</div>}
             <ol>
-                {data?.content?.length > 0 && data.content.map(entryMedia => <Link to={`/add_entry_success?table_Id${tableId}&${entryId}`}> <EntryMediaGlobal entryMedia={entryMedia} key={entryMedia.id} /> </Link>)}
+                {medias?.content?.length > 0 && medias.content.map(entryMedia => <Link to={`/tables?table_id=${tableId}`} onclick={addEntryMediaToList(tableId, entryMedia.id)}> <EntryMediaGlobal entryMedia={entryMedia} key={entryMedia.id} /> </Link>)}
                 
             </ol>
         </main>

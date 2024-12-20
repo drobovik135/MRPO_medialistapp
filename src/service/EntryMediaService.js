@@ -11,7 +11,9 @@ export async function getMediaByCategory(category) {
     return await axios.get(`${API_URL}/categories/${category}`)   
 }
 
-export async function addEntryMediaToList(params) {
-    return await axios.post(API_URL, )
+export async function addEntryMediaToList(tableId, entryId) {
+    return await axios.post(`http://localhost:8080/tables/${tableId}/entries`, {
+        "mediaId":entryId
+    })
     
 }
