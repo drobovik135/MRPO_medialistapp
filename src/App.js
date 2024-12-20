@@ -19,7 +19,7 @@ function App() {
       <div className="App">
         <Router>
           <Routes>
-            <Route path="/list"></Route>
+            <Route path="/allmedia" element = {<AllMedia/>}></Route>
             <Route path="/"></Route>
             <Route path="/user" element={<User/>} />
             
