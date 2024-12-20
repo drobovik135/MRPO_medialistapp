@@ -38,17 +38,18 @@ const UserPage = (user, lists) => {
                 </div>
                 <div className="user-lists">
                     {lists.map((list) => (
-                        <Link
-                            to={`/table?table_id=` + list.id}
-                            className="user-card-link"
-                        >
+
                             <div className="user-card">
+                                <Link
+                            to={`/table?table_id=` + list.id}
+                            className="user-card-link">
                                 <h3 className="user-name">{list.name}</h3>
+                                </Link>
                                 <p className="user-description">{list.info}</p>
-                                <button onClick={() => { deleteTableById(list.id) }}>
+                                <button className="button-23"onClick={() => { deleteTableById(list.id) }}>
                                     Delete List</button >
                             </div>
-                        </Link>))}
+                        ))}
                 </div>
             </div>
         </div>
