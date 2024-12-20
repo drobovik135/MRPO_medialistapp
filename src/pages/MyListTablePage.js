@@ -13,7 +13,7 @@ export const MyListTablePage = ( table, entries ) => {
                     <Link to={`/table?table_id=${table.id}`}>
                         <EntryMedia entryMedia={entryMedia} key={entryMedia.id} />
                     </Link>
-                    <button className = ".delete-entry-button ">onclick={removeEntry(entryMedia.id)}</button>
+                    <button className = ".delete-entry-button ">onclick={() => {removeEntry(entryMedia.id)}}</button>
                 </div>
             ))}
         </main>
