@@ -17,3 +17,8 @@ export async function addEntryMediaToList(tableId, entryId) {
     })
     
 }
+
+export async function removeEntry(entryId) {
+    return await axios.delete(`http://localhost:8080/entries${entryId}`)
+    
+}

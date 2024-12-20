@@ -1,7 +1,7 @@
 import React from 'react'
 import AddEntryPage from '../pages/AddEntryPage'
 
-class AddEntry extends React.Component{
+class AddMedia extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -38,4 +38,4 @@ class AddEntry extends React.Component{
     }
 };
 
-export default AddEntry
+export default AddMedia

@@ -7,7 +7,7 @@ class AddEntry extends React.Component{
         this.state = {
             errror: null,
             isLoaded: false,
-            tableId: 0,
+            table: {},
             medias: [],
         }
     }
@@ -16,6 +16,22 @@ class AddEntry extends React.Component{
         const queryParameters = new URLSearchParams(window.location.search);
         const tableId = queryParameters.get("table_id");
         this.state.tableId = tableId;
+
+        fetch('http://localhost:8080/tables/'+tableId)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        isLoaded: true,
+                        table: result
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+            });
 
         fetch('http://localhost:8080/medias')
           .then(res => res.json())
@@ -35,8 +51,8 @@ class AddEntry extends React.Component{
     }
 
     render() {
-        const { error, isLoaded, tableId, medias } = this.state;
-        return AddEntryPage(tableId, medias);
+        const { error, isLoaded, table, medias } = this.state;
+        return AddEntryPage(table, medias);
     }
 };
 

@@ -1,7 +1,7 @@
 import React from 'react'
 //import MyListTablePage from '../pages/MyListTablePage'
 
-class AddEntry extends React.Component{
+class AddEntrySuecess extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -17,6 +17,7 @@ class AddEntry extends React.Component{
         fetch('http://localhost:8080/categories/', {
             method: 'POST',
             body: JSON.stringify({
+                
             })
         })
         
@@ -28,4 +29,4 @@ class AddEntry extends React.Component{
     }
 };
 
-export default AddEntry
+export default AddEntrySuecess

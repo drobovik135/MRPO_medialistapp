@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const EntryMedia = ({ entryMedia }) => {
   return (
-    <Link to={`/entries/${entryMedia.id}`}>
+    <Link to={``}>
       <div class="media-entry">
         <div class="media-poster">
           <img src={entryMedia.imgUrl} />
