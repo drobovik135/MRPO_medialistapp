@@ -10,7 +10,9 @@ import {
 } from 'react-router-dom';
 import EntryMedia from './components/EntryMedia';
 import Header from './components/Header';
+
 import User from './components/User'
+import UserList from './components/UserList'
 
 function App() {
   return (
@@ -19,10 +21,9 @@ function App() {
       <div className="App">
         <Router>
           <Routes>
-            <Route path="/allmedia" element = {<AllMedia/>}></Route>
-            <Route path="/"></Route>
-            <Route path="/user" element={<User/>} />
-            
+            <Route path="/list"></Route>
+            <Route path="/" element={<UserList/>}></Route>
+            <Route path="/user" element={<User/>}></Route>
           </Routes>
         </Router>
       </div>

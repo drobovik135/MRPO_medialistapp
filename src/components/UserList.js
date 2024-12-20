@@ -1,51 +1,38 @@
 import React from 'react'
-import { getAllUsers } from '../service/UserService';
+import UserListPage from "../pages/UserListPage";
 
-const UserList = ({ users }) => {
+class UserList extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            errror: null,
+            isLoaded: false,
+            users: []
+        }
+    }
 
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    componentDidMount(){
+        fetch('http://localhost:8080/users')
+          .then(res => res.json())
+          .then(
+            (result) => {
+                this.setState({
+                    isLoaded: true,
+                    users: result
+                });
+            },
+            (error) => {
+                this.setState({
+                    isLoaded: true,
+                    error
+                });
+            });
+    }
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const response = UserService.getAllUsers;
-                setUsers(response.data); 
-                setLoading(false);
-            } catch (err) {
-                setError(err.message);
-                setLoading(false);
-            }
-        };
-
-        fetchUsers();
-    }, []);
-
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
-
-
-
-
-    return (
-        <div className="user-list-container">
-            <div className="user-list">
-                {users.map((user, index) => (
-                    <Link
-                        key={index}
-                        to={`/user?id=`+user.id}
-                        className="user-card-link"
-                    >
-                        <div key={index} className="user-card">
-                            <h3 className="user-name">{user.name}</h3>
-                            <p className="user-description">{user.description}</p>
-                        </div>
-                    </Link>
-                ))}
-            </div>
-        </div>
-    );
+    render() {
+        const { error, isLoaded, users } = this.state;
+        return UserListPage(users);
+    }
 };
 
 export default UserList
