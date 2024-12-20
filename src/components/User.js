@@ -16,7 +16,7 @@ class User extends React.Component{
         const queryParameters = new URLSearchParams(window.location.search);
         const id = queryParameters.get("id");
 
-        fetch('http://localhost:25565/users/'+ id)
+        fetch('http://localhost:8080/users/'+ id)
           .then(res => res.json())
           .then(
             (result) => {
@@ -32,7 +32,7 @@ class User extends React.Component{
                 });
             });
 
-        fetch('http://localhost:25565/users' + id + "/table")
+        fetch('http://localhost:8080/users' + id + "/table")
             .then(res => res.json())
             .then(
               (result) => {
