@@ -11,8 +11,7 @@ const UserPage = (user, lists) => {
                     <h1>{user.name}</h1>
                     <h1>{user.info}</h1>
                 </div>
-            </div>
-            <div className="user-list">
+                <div className="user-list">
                 {lists.map((list) => (
                     <Link
                         to={`/table?table_id=`+list.id}
@@ -23,9 +22,10 @@ const UserPage = (user, lists) => {
                             <p className="user-description">{list.info}</p>
                         </div>
                     </Link>
-                ))}
+                
             </div>
-        </div>
+
+                ))}
     );
 }
 
