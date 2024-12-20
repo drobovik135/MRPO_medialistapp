@@ -14,7 +14,7 @@ class AddEntry extends React.Component{
 
     componentDidMount(){
         const queryParameters = new URLSearchParams(window.location.search);
-        const tableId = queryParameters.get("tableId");
+        const tableId = queryParameters.get("table_id");
         this.state.tableId = tableId;
 
         fetch('http://localhost:8080/medias')

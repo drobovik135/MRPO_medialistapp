@@ -15,7 +15,7 @@ export const AllMedia = () => {
     
         componentDidMount(){
             const queryParameters = new URLSearchParams(window.location.search);
-            const categoryId = queryParameters.get("categoryId");
+            const categoryId = queryParameters.get("category_id");
 
             
             fetch('http://localhost:8080/categories/'+categoryId)

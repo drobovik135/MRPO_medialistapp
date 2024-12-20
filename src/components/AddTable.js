@@ -1,27 +1,27 @@
 import React from 'react'
 //import MyListTablePage from '../pages/MyListTablePage'
 
-class AddEntry extends React.Component{
+class AddTable extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             errror: null,
             isLoaded: false,
-            category: {},
+            user: {},
         }
     }
 
     componentDidMount(){
         const queryParameters = new URLSearchParams(window.location.search);
-        const categoryId = queryParameters.get("category_id");
+        const userId = queryParameters.get("user_id");
 
-        fetch('http://localhost:8080/categories/'+categoryId)
+        fetch('http://localhost:8080/users/'+userId)
           .then(res => res.json())
           .then(
             (result) => {
                 this.setState({
                     isLoaded: true,
-                    category: result
+                    user: result
                 });
             },
             (error) => {
@@ -33,9 +33,9 @@ class AddEntry extends React.Component{
     }
 
     render() {
-        const { error, isLoaded, category } = this.state;
-        return AddMediaPage(category);
+        const { error, isLoaded, user } = this.state;
+        return AddMediaPage(user);
     }
 };
 
-export default AddEntry
+export default AddTable

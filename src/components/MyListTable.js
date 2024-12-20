@@ -14,7 +14,7 @@ class MyListTable extends React.Component{
 
     componentDidMount(){
         const queryParameters = new URLSearchParams(window.location.search);
-        const tableId = queryParameters.get("id");
+        const tableId = queryParameters.get("table_id");
 
 
         fetch('http://localhost:8080/tables/'+ tableId)

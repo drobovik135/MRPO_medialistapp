@@ -14,22 +14,12 @@ class AddEntry extends React.Component{
     componentDidMount(){
         const queryParameters = new URLSearchParams(window.location.search);
         const categoryId = queryParameters.get("category_id");
-
-        fetch('http://localhost:8080/categories/'+categoryId)
-          .then(res => res.json())
-          .then(
-            (result) => {
-                this.setState({
-                    isLoaded: true,
-                    category: result
-                });
-            },
-            (error) => {
-                this.setState({
-                    isLoaded: true,
-                    error
-                });
-            });
+        fetch('http://localhost:8080/categories/', {
+            method: 'POST',
+            body: JSON.stringify({
+            })
+        })
+        
     }
 
     render() {

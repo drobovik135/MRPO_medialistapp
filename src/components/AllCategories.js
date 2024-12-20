@@ -13,20 +13,20 @@ class AddEntry extends React.Component{
 
     componentDidMount(){
         fetch('http://localhost:8080/categories')
-          .then(res => res.json())
-          .then(
-            (result) => {
-                this.setState({
-                    isLoaded: true,
-                    categories: result
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        isLoaded: true,
+                        categories: result
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
                 });
-            },
-            (error) => {
-                this.setState({
-                    isLoaded: true,
-                    error
-                });
-            });
     }
 
     render() {

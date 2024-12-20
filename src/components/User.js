@@ -14,9 +14,9 @@ class User extends React.Component{
 
     componentDidMount(){
         const queryParameters = new URLSearchParams(window.location.search);
-        const id = queryParameters.get("id");
+        const userId = queryParameters.get("user_id");
 
-        fetch('http://localhost:8080/users/'+ id)
+        fetch('http://localhost:8080/users/'+ userId)
           .then(res => res.json())
           .then(
             (result) => {
@@ -32,7 +32,7 @@ class User extends React.Component{
                 });
             });
 
-        fetch('http://localhost:8080/users' + id + "/table")
+        fetch('http://localhost:8080/users' + userId + "/table")
             .then(res => res.json())
             .then(
               (result) => {
@@ -51,7 +51,7 @@ class User extends React.Component{
 
     render() {
         const { error, isLoaded, user, lists } = this.state;
-        return UserPage(user, lists);
+        return UserPage(userId, lists);
     }
 };
 
