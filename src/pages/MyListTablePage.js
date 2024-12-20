@@ -11,8 +11,9 @@ export const MyListTablePage = ( table, entries ) => {
                 entries.map(entryMedia => (
                 <div>
                     <EntryMedia entryMedia={entryMedia} key={entryMedia.id} />
-                    
-                </div>//<Link to={`/table?table_id=${table.id}`} onclick={removeEntry(entryMedia.id)}></Link>
+
+                    <Link to={`/table?table_id=${table.id}`} onclick={removeEntry(entryMedia.id)}></Link>
+                </div>
             ))}
         </main>
     )
