@@ -1,6 +1,4 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
-
 const EntryMediaPage = (user, list) => {
     return (
         <Link to={`/entries/${entryMedia.id}`}>
@@ -11,6 +9,7 @@ const EntryMediaPage = (user, list) => {
                 <div class="media-info">
                     <h2 class="media-title">{entryMedia.name}</h2>
                     <p class="mediaEntry-rating">Your Rating: {entryMedia.mediaRate}</p>
+                    <p class="mediaEntry-rating">mediaReview: {entryMedia.mediaReview}</p>
                     <p class="media-genre">Genre: {entryMedia.genre}</p>
                 </div>
             </div>
