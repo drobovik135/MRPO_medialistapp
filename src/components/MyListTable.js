@@ -1,7 +1,7 @@
 import React from 'react'
 import EntryMedia from './EntryMedia'
 
-export const MyListTable = ({ data, currentList, getAllEntries }) => {
+export const MyListTable = ({ data }) => {
     return (
         <main className='mylisttable'>
             {data?.content?.length === 0 && <div>No entries yet</div>}
@@ -11,3 +11,5 @@ export const MyListTable = ({ data, currentList, getAllEntries }) => {
         </main>
     )
 }
+
+export default MyListTable

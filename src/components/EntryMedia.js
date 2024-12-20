@@ -10,7 +10,7 @@ const EntryMedia = ({ entryMedia }) => {
         </div>
         <div class="media-info">
           <h2 class="media-title">{entryMedia.name}</h2>
-          <p class="mediaEntry-rating">Rating: {entryMedia.mediaRate}</p>
+          <p class="mediaEntry-rating">Your Rating: {entryMedia.mediaRate}</p>
           <p class="media-genre">Genre: {entryMedia.genre}</p>
         </div>
       </div>

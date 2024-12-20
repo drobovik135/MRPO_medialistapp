@@ -6,9 +6,6 @@ export async function getAllMedia(params) {
     return await axios.get(API_URL)   
 }
 
-export async function getMediaList(params) {
-    return await axios.get(API_URL)   
-}
 
 export async function getMediaByCategory(category) {
     return await axios.get(`${API_URL}/categories/${category}`)   

@@ -8,7 +8,7 @@ function App() {
 
 
 
-  const getAllContacts = async
+  
 
   useEffect(() => {
     getAllContacts();
@@ -16,12 +16,21 @@ function App() {
 
   return (
     <>
-    <Header toggleModal={toggleModal} />
-    <div className="App">
-      <Route path ="/list"
-    </div>
+      <Header />
+      <div className="App">
+        <Router>
+          <Routes>
+            <Route path="/list"></Route>
+            <Route path="/"></Route>
+            <Route path="/user/:userId" element={<UserPage users={users} />} />
+            
+          </Routes>
+        </Router>
+      </div>
     </>
   );
 }
+
+
 
 export default App;
