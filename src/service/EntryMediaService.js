@@ -11,14 +11,16 @@ export async function getMediaByCategory(category) {
     return await axios.get(`${API_URL}/categories/${category}`)   
 }
 
-export async function addEntryMediaToList(tableId, entryId) {
+export async function addEntryMediaToList(tableId, entryId, entryRate, entryReview) {
     return await axios.post(`http://localhost:8080/tables/${tableId}/entries`, {
-        "mediaId":entryId
+        "mediaId":entryId,
+        "mediaRate": entryRate,
+        "mediaReview": entryReview
     })
     
 }
 
 export async function removeEntry(entryId) {
-    return await axios.delete(`http://localhost:8080/entries${entryId}`)
+    return await axios.delete(`http://localhost:8080/entries/${entryId}`);
     
 }

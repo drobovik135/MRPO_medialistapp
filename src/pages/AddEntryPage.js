@@ -8,10 +8,25 @@ const AddEntryPage = (table, medias) => {
   return (
     <main className='mylisttable'>
         <h1>{table.name}</h1>
-
+        
         {medias?.length === 0 && <div>No entries yet</div>}
         <ol>
-            {medias?.length > 0 && medias.map(entryMedia => <Link to={`/table?table_id=${table.id}`} onclick={addEntryMediaToList(table.id, entryMedia.id)}> <EntryMediaPage entryMedia={entryMedia} key={entryMedia.id} /> </Link>)}
+          {medias?.length > 0 && medias.map(entryMedia => {
+            var rate = -1;
+            var review = "";
+            return <div>
+                    <Link to={`/table?table_id=${table.id}`} onClick={() => {addEntryMediaToList(table.id, entryMedia.id, rate, review)}}>
+                      <EntryMediaPage entryMedia={entryMedia}/> 
+                    </Link>
+                    <input  type="text"
+                      onChange={ e => { rate = e.target.value }}/>
+                    <input  type="text"
+                      onChange={ e => { review = e.target.value }}/>
+                  </div>
+          }
+            
+          )}
+          
             
         </ol>
     </main>

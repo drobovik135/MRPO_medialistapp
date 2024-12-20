@@ -11,9 +11,11 @@ export const MyListTablePage = ( table, entries ) => {
                 entries.map(entryMedia => (
                 <div className = 'mylisttable2'>
                     <Link to={`/table?table_id=${table.id}`}>
-                        <EntryMedia entryMedia={entryMedia} key={entryMedia.id} />
+                        <EntryMedia entryMedia={entryMedia}/>
                     </Link>
-                    <button className = ".delete-entry-button ">onclick={removeEntry(entryMedia.id)}</button>
+                    <Link to={`/table?table_id=${table.id}`} onClick={() => {removeEntry(entryMedia.id)}}>
+                        delete
+                    </Link>
                 </div>
             ))}
         </main>
