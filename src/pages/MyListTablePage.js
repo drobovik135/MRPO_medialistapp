@@ -3,8 +3,18 @@ import EntryMedia from '../components/EntryMedia';
 import { Link } from 'react-router-dom';
 import { removeEntry } from '../service/EntryMediaService';
 import { Container } from 'react-bootstrap';
+import React, { useState } from 'react';
 
 export const MyListTablePage = (table, entries) => {
+
+
+    const [entries, setEntries] = useState([]);
+
+    function updateState(entryMedia) {
+      const item = entryMedia
+      console.log(entryMedia);
+      setEntries([...entries, entryMedia]);
+    }
 
     return (
         <div className='mylisttable'>
@@ -20,7 +30,7 @@ export const MyListTablePage = (table, entries) => {
                     </Link>
                     <div>
                         <Link align="left" type="submit" className='button-23' to={`/table?table_id=${table.id}`} onClick={() => { 
-                            removeEntry(entryMedia.id); }}>
+                            updateState(entryMedia.id); }}>
                             Delete Entry
                         </Link>
                     </div>
